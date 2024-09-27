@@ -99,7 +99,7 @@ const siteConfig: SiteConfig = {
         title: 'Simone Boldrini',
         text: 'I am a PhD student in Economics and Finance at <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi University</a>. I hold a BSc in Finance (2020) and a MSc in Economics (2022), both from <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi</a>. <br/><br/>After graduating, I worked for two years at the <a href="https://www.ecb.europa.eu/pub/research/authors/profiles/simone-boldrini.it.html" class="text-blue-600 underline">European Central Bank</a> on topics related to financial stability and climate change from an academic and policy perspective. <br/>',
         image: {
-            src: '/public/simoboldrini.jpeg',
+            src: '/simoboldrini.jpeg',
             alt: 'A person sitting at a desk in front of a computer'
         },
         actions: [
