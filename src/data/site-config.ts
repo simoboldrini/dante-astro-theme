@@ -71,7 +71,7 @@ const siteConfig: SiteConfig = {
         },
 
         {
-            text: 'More aout me',
+            text: 'More about me',
             href: '/about'
         },
         {
