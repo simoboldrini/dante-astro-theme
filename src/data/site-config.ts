@@ -38,12 +38,12 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    title: '',
-    subtitle: '',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+    title: 'Simone Boldrini',
+    subtitle: 'Personal Page',
+    description: 'This is the personal page of Simone Boldrini PhD in Economics and Finance at Bocconi University',
     image: {
-        src: '/dante-preview.jpg',
-        alt: 'Dante - Astro.js and Tailwind CSS theme'
+        src: '/simoboldrini.JPEG',
+        alt: 'Simone Boldrini'
     },
     headerNavLinks: [
         // {
@@ -64,8 +64,14 @@ const siteConfig: SiteConfig = {
         // }
     ],
     footerNavLinks: [
+
         {
-            text: 'About',
+            text: 'Home',
+            href: '/'
+        },
+
+        {
+            text: 'More aout me',
             href: '/about'
         },
         {
@@ -75,31 +81,24 @@ const siteConfig: SiteConfig = {
         {
             text: 'Terms',
             href: '/terms'
-        },
-        {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
         }
+
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
+            text: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/simone-boldrini-225a9418a/'
         },
         {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
+            text: 'Mail',
+            href: 'mailto:simone.boldrini@phd.unibocconi.it'
         },
-        {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
-        }
     ],
     hero: {
         title: 'Simone Boldrini',
         text: 'I am a PhD student in Economics and Finance at <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi University</a>. I hold a BSc in Finance (2020) and a MSc in Economics (2022), both from <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi</a>. <br/><br/>After graduating, I worked for two years at the <a href="https://www.ecb.europa.eu/pub/research/authors/profiles/simone-boldrini.it.html" class="text-blue-600 underline">European Central Bank</a> on topics related to financial stability and climate change from an academic and policy perspective. <br/>',
         image: {
-            src: '/simoboldrini.jpeg',
+            src: '/simoboldrini.JPEG',
             alt: 'A person sitting at a desk in front of a computer'
         },
         actions: [
@@ -109,11 +108,11 @@ const siteConfig: SiteConfig = {
             }
         ]
     },
-    subscribe: {
-        title: 'Subscribe to Dante Newsletter',
-        text: 'One update per week. All the latest posts directly in your inbox.',
-        formUrl: '#'
-    },
+    // subscribe: {
+    //     title: 'Subscribe to Dante Newsletter',
+    //     text: 'One update per week. All the latest posts directly in your inbox.',
+    //     formUrl: '#'
+    // },
     postsPerPage: 8,
     projectsPerPage: 8
 };
