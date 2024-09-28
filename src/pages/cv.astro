@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TimeLineElement from '../components/cv/TimeLine.astro';
+---
+
+<BaseLayout title="Resume">
+    <div class="mb-5">
+        <div class="text-5xl w-full font-bold">Profile</div>
+    </div>
+
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Education</div>
+    </div>
+
+    <div class="time-line-container flex flex-col mb-10">
+        <div class="mb-[-20px]">
+            <TimeLineElement title="MSc in Economic and Social Sciences" subtitle="2020 to 2022 at Bocconi, Milan, Italy" />
+        </div>
+        <div class="mb-[-20px]">
+            <TimeLineElement title="Exchange Program" subtitle="2020 to 2020 at Wharton, University of Pennsylvania, Philadelphia, USA" />
+        </div>
+        <div>
+            <TimeLineElement title="BSc in Economics and Finance" subtitle="2017 to 2020 at Bocconi, Milan, Italy" />
+        </div>
+    </div>
+
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Experience</div>
+    </div>
+
+    <div class="time-line-container mb-10">
+        <TimeLineElement
+            title="<strong> European Central Bank </strong> – Analyst, DG Macroprudential Policy and Financial Stability"
+            subtitle="From Sep. 2023 to Aug. 2024 at Frankfurt, Germany"
+            ><li>Coordinating the development of the NGFS Phase V scenarios for the resilience of the EU financial system.</li>
+            <li>Enhancing sectoral granularity and improving stress test models.</li>
+            <br />
+        </TimeLineElement>
+        <TimeLineElement
+            title="<strong> European Central Bank </strong> – Trainee & Analyst, Counsel to the Executive Board (CCC)"
+            subtitle="From Sep. 2022 to Aug. 2023 at Frankfurt, Germany"
+        >
+            <li>Produced two ECB occasional papers on Euro Area banks' exposure to nature-related risks.</li>
+            <li>Developed methodologies to assess bank portfolio sensitivity to climate risks.</li>
+            <li>Briefed Executive Board members on the policy implications of climate-related risks.</li>
+            <br />
+        </TimeLineElement>
+    </div>
+    <div class="time-line-container mb-10">
+        <TimeLineElement
+            title="<strong>IGIER, Bocconi University</strong> – Research Assistant to Prof. Mariano Massimiliano Croce"
+            subtitle="From Apr 2021 to Jun 2022 at Milan, Italy"
+        >
+            <li>Contributed to empirical analysis for a FED paper on macrofinance.</li>
+            <li>Performed econometric analysis (VARs) and visualized results using interactive dashboards.</li>
+            <br />
+        </TimeLineElement>
+        <TimeLineElement
+            title="<strong>IGIER, Bocconi University</strong> – Research Assistant to Prof. Barbara Rindi"
+            subtitle="From May 2019 to Oct 2020 at Milan, Italy"
+        >
+            <li>Developed and maintained models to analyze the effects of variations in tick size and fees.</li>
+            <li>Improved modeling infrastructure using Python for faster computation.</li>
+            <br />
+        </TimeLineElement>
+    </div>
+
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Skills</div>
+    </div>
+
+    <ul class="list-disc md:columns-5 columns-2 mx-6">
+        Python<br />
+        SQL<br />
+        R<br />
+        Stata<br />
+        Latex
+    </ul>
+</BaseLayout>

@@ -46,10 +46,17 @@ const siteConfig: SiteConfig = {
         alt: 'Simone Boldrini'
     },
     headerNavLinks: [
-        // {
-        //     text: 'Home',
-        //     href: '/'
-        // },
+        {
+            text: 'Home',
+            href: '/'
+        },
+        {
+            text: 'CV',
+            href: '/cv'
+
+        },
+
+
         // {
         //     text: 'Projects',
         //     href: '/projects'
