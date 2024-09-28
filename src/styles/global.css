@@ -84,7 +84,7 @@
     top: 2; /* Start from the top */
     left: 50%; /* Align the line to the center of the container */
     width: 2px; /* Line thickness */
-    height: 115%; /* Stretch across the full height */
+    height: 112.8%; /* Stretch across the full height */
     background-color: var(--timeline-color);
     z-index: 0; /* Behind the dot */
     transform: translateX(-50%); /* Adjust for perfect centering */
