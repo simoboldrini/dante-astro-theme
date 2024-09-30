@@ -56,9 +56,8 @@ const siteConfig: SiteConfig = {
 
         },
 
-
         {
-            text: 'Projects',
+            text: 'Policy work',
             href: '/projects'
         },
         // {
