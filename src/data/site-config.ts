@@ -57,10 +57,10 @@ const siteConfig: SiteConfig = {
         },
 
 
-        // {
-        //     text: 'Projects',
-        //     href: '/projects'
-        // },
+        {
+            text: 'Projects',
+            href: '/projects'
+        },
         // {
         //     text: 'Blog',
         //     href: '/blog'
