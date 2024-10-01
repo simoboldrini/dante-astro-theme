@@ -12,6 +12,39 @@ const seoSchema = z.object({
     pageType: z.enum(['website', 'article']).default('website')
 });
 
+const authorSchema = z.object({
+    name: z.string(),
+    url: z.string().url().optional(),
+    institution: z.string(),
+    notes: z.array(z.string()).optional()
+});
+
+const noteSchema = z.object({
+    symbol: z.string(),
+    text: z.string()
+});
+
+const linkSchema = z.object({
+    name: z.string(),
+    url: z.string().url(),
+    icon: z.string().optional()
+});
+
+const projects = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        publishDate: z.coerce.date(),
+        isFeatured: z.boolean().default(false),
+        seo: seoSchema.optional(),
+        authors: z.array(authorSchema),
+        conference: z.string().optional(),
+        notes: z.array(noteSchema).optional(),
+        links: z.array(linkSchema).optional()
+    })
+});
+
+
 const blog = defineCollection({
     schema: z.object({
         title: z.string(),
@@ -31,14 +64,6 @@ const pages = defineCollection({
     })
 });
 
-const projects = defineCollection({
-    schema: z.object({
-        title: z.string(),
-        description: z.string().optional(),
-        publishDate: z.coerce.date(),
-        isFeatured: z.boolean().default(false),
-        seo: seoSchema.optional()
-    })
-});
+
 
 export const collections = { blog, pages, projects };
