@@ -1,7 +1,7 @@
 ---
 title: 'The impact of the euro area economy and banks on biodiversity'
 description: This study analyses the contribution of euro area economic activities – and the bank loans provided to enable them – to biodiversity loss by estimating biodiversity footprints
-publishDate: 'Jan 02 2024'
+publishDate: 'Dec 04 2023'
 seo:
   image:
     src: '/project-1.jpg'

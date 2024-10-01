@@ -25,7 +25,6 @@ type Props = { project: CollectionEntry<'projects'>; prevProject: CollectionEntr
 const { project, prevProject, nextProject } = Astro.props;
 const { title, description, seo, authors, conference, notes, links } = project.data; // Pulling these from frontmatter
 const { Content } = await project.render();
-console.log(project.data.authors);
 ---
 
 <BaseLayout image={seo?.image} pageType="article" showHeader={false}>

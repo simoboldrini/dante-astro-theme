@@ -57,6 +57,11 @@ const siteConfig: SiteConfig = {
         },
 
         {
+            text: 'Academic work',
+            href: '/academic-work'
+        },
+
+        {
             text: 'Policy work',
             href: '/projects'
         },

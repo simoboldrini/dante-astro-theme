@@ -1,7 +1,7 @@
 ---
 title: 'Living in a world of disappearing nature: physical risk and the implications for financial stability'
 description: The study then develops a method to capture banks’ credit portfolio sensitivity to possible future changes in the provision of ecosystem services
-publishDate: 'Jan 02 2024'
+publishDate: 'Nov 14 2023'
 seo:
   image:
     src: '/project-1.jpg'
