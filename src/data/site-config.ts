@@ -56,11 +56,15 @@ const siteConfig: SiteConfig = {
 
         },
 
+        {
+            text: 'Academic work',
+            href: '/academic-work'
+        },
 
-        // {
-        //     text: 'Projects',
-        //     href: '/projects'
-        // },
+        {
+            text: 'Policy work',
+            href: '/projects'
+        },
         // {
         //     text: 'Blog',
         //     href: '/blog'
