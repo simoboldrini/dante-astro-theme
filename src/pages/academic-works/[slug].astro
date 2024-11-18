@@ -1,0 +1,56 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectPreview from '../../components/AcademicProjectPreview.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+import { Debug } from 'astro:components';
+
+import Header from '../../components/academic-project/Header.astro';
+
+export async function getStaticPaths() {
+    const projects = (await getCollection('academic-works')).sort(sortItemsByDateDesc);
+    const projectCount = projects.length;
+    return projects.map((project, index) => ({
+        params: { slug: project.slug }, // Keep the slug relative to the `academic-works` path
+        props: {
+            project,
+            prevProject: index + 1 !== projectCount ? projects[index + 1] : null,
+            nextProject: index !== 0 ? projects[index - 1] : null
+        }
+    }));
+}
+
+type Props = { project: CollectionEntry<'academic-works'>; prevProject: CollectionEntry<'academic-works'>; nextProject: CollectionEntry<'academic-works'> };
+
+const { project, prevProject, nextProject } = Astro.props;
+const { title, description, seo, authors, conference, notes, links } = project.data; // Pulling these from frontmatter
+const { Content } = await project.render();
+---
+
+<BaseLayout image={seo?.image} pageType="article" showHeader={false}>
+    <Header
+        title={project.data.title}
+        authors={project.data.authors}
+        conference={project.data.conference}
+        notes={project.data.notes}
+        links={project.data.links}
+    />
+
+    <article class="mb-16 sm:mb-24">
+        <header class="mb-8"></header>
+        <header class="mb-8"></header>
+        <div class="max-w-none prose prose-dante sm:prose-lg text-justify">
+            <Content />
+        </div>
+    </article>
+
+    {
+        (prevProject || nextProject) && (
+            <div class="my-16 sm:my-24">
+                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">View Next</h2>
+                {nextProject && <ProjectPreview project={nextProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
+                {prevProject && <ProjectPreview project={prevProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
+            </div>
+        )
+    }
+</BaseLayout>

@@ -58,7 +58,7 @@ const siteConfig: SiteConfig = {
 
         {
             text: 'Academic work',
-            href: '/academic-work'
+            href: '/academic-works'
         },
 
         {
