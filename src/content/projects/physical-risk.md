@@ -1,5 +1,5 @@
 ---
-title: 'Living in a world of disappearing nature: physical risk and the implications for financial stability'
+title: 'Living in a World of Disappearing Nature: Physical Risk and the Implications for Financial Stability'
 description: The study then develops a method to capture banks’ credit portfolio sensitivity to possible future changes in the provision of ecosystem services
 publishDate: 'Nov 14 2023'
 seo:
