@@ -36,7 +36,7 @@ conferences:
     url: "https://qfw2025.community.unipa.it"
     presenter: "C. Tebaldi"
 chart:
-  image: "/public/supply_chain_fig.png"  
+  image: "/supply_chain_fig.png"  
   altText: "Chart showing supply chain shock impacts on R&D-intensive firms"
   caption: "Figure 1: Impact of supply chain shocks"
 ---

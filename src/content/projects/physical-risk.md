@@ -31,7 +31,7 @@ links:
     icon: "fa-solid:file-pdf"
 
 chart:
-  image: "/public/dep_fig.png"  # Path to a static chart image
+  image: "/dep_fig.png"  # Path to a static chart image
   caption: "Dependency of euro area NFCs on ecosystem services"
 ---
 
