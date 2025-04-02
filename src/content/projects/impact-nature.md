@@ -31,7 +31,7 @@ links:
     icon: "fa-solid:file-pdf"
 
 chart:
-  image: "/public/impact_fig.png"  # Path to a static chart image
+  image: "/impact_fig.png"  # Path to a static chart image
   caption: "Total biodiversity footprint of NFCs in euro area countries and sectors"
 ---
 
