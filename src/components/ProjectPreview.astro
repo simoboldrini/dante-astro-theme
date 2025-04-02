@@ -2,23 +2,69 @@
 import { type CollectionEntry } from 'astro:content';
 import ArrowRight from '../icons/ArrowRight.astro';
 
-type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
+type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3'; showChart?: boolean };
 
-const { project, class: className, headingLevel = 'h2' } = Astro.props;
-const { title, description } = project.data;
+const { project, class: className, headingLevel = 'h2', showChart = true } = Astro.props;
+const { title, description, authors, conferences, chart } = project.data;
 const TitleTag = headingLevel;
 ---
 
-<a class:list={['flex justify-between items-start gap-8 group', className]} href={`/projects/${project.slug}/`}>
-    <div class="grow">
-        <TitleTag
-            class="text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"
-        >
-            {title}
-        </TitleTag>
-        {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
+<div class:list={['group', className]}>
+    <div class="flex flex-col md:flex-row gap-4">
+        <a class:list={['flex-1', showChart ? 'md:w-2/3' : 'w-full']} href={`/projects/${project.slug}/`}>
+            <div>
+                <TitleTag
+                    class="text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"
+                >
+                    {title}
+                </TitleTag>
+
+                {
+                    authors && (
+                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                            {authors.map((author: { name: string; url?: string }, index: number) => (
+                                <>
+                                    {author.url ? (
+                                        <a href={author.url} class="hover:underline">
+                                            {author.name}
+                                        </a>
+                                    ) : (
+                                        author.name
+                                    )}
+                                    {index < authors.length - 1 && ' - '}
+                                </>
+                            ))}
+                        </div>
+                    )
+                }
+                {conferences && <div class="mt-1 text-sm font-medium">{conferences}</div>}
+
+                {description && <div class="mt-2 text-sm leading-normal">{description}</div>}
+            </div>
+        </a>
+
+        {
+            showChart && (
+                <div class="md:w-2/3 bg-gray-50 dark:bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center">
+                    <slot name="chart">
+                        {chart?.image && (
+                            <div class="chart-container flex flex-col items-center justify-center w-full h-full">
+                                <img
+                                    src={chart.image}
+                                    alt={chart.altText || `Chart for ${title}`}
+                                    class={chart.imageClass || 'w-full max-w-full object-contain max-h-[800px]'}
+                                />
+                                {chart.caption && <p class="text-xs text-center mt-3 text-gray-600 dark:text-gray-400 max-w-full">{chart.caption}</p>}
+                            </div>
+                        )}
+                        {!chart?.image && (
+                            <div class="w-full h-48 flex items-center justify-center text-gray-400 border border-gray-200 dark:border-gray-700 rounded">
+                                Chart placeholder
+                            </div>
+                        )}
+                    </slot>
+                </div>
+            )
+        }
     </div>
-    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
-        View Project <ArrowRight class="fill-current w-4 h-4" />
-    </div>
-</a>
+</div>

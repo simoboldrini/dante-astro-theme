@@ -11,13 +11,17 @@ authors:
     url: "https://simoneboldrini.com"
     institution: "Bocconi University"
   - name: "Andrej Ceglar"
+    url: "https://www.ecb.europa.eu/pub/research/authors/profiles/andrej-ceglar.en.html"
     institution: "European Central Bank"
   - name: "Chiara Lelli"
+    url: "https://www.ecb.europa.eu/pub/research/authors/profiles/chiara-lelli.en.html"
     institution: "European Central Bank"
   - name: "Laura Parisi"
+    url: "https://www.ecb.europa.eu/pub/research/authors/profiles/laura-parisi.en.html"
     institution: "European Central Bank"
   - name: " Irene Heemskerk"
-    institution: "European Central Bank"      
+    url: "https://www.ecb.europa.eu/pub/research/authors/profiles/irene-heemskerk.en.html"
+    institution: "European Central Bank"          
 
 conference: "ECB Occasional Paper Series"
 
@@ -25,6 +29,10 @@ links:
   - name: "Paper"
     url: "https://www.ecb.europa.eu/pub/pdf/scpops/ecb.op333~1b97e436be.it.pdf?90e7aaae4ef927f887a787587a22adba"
     icon: "fa-solid:file-pdf"
+
+chart:
+  image: "/public/dep_fig.png"  # Path to a static chart image
+  caption: "Dependency of euro area NFCs on ecosystem services"
 ---
 
 The loss of biodiversity and the degradation of natural ecosystems pose a significant
