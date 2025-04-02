@@ -11,12 +11,16 @@ authors:
     url: "https://simoneboldrini.com"
     institution: "Bocconi University"
   - name: "Andrej Ceglar"
+    url: "https://www.ecb.europa.eu/pub/research/authors/profiles/andrej-ceglar.en.html"
     institution: "European Central Bank"
   - name: "Chiara Lelli"
+    url: "https://www.ecb.europa.eu/pub/research/authors/profiles/chiara-lelli.en.html"
     institution: "European Central Bank"
   - name: "Laura Parisi"
+    url: "https://www.ecb.europa.eu/pub/research/authors/profiles/laura-parisi.en.html"
     institution: "European Central Bank"
   - name: " Irene Heemskerk"
+    url: "https://www.ecb.europa.eu/pub/research/authors/profiles/irene-heemskerk.en.html"
     institution: "European Central Bank"      
 
 conference: "ECB Occasional Paper Series"
@@ -25,6 +29,10 @@ links:
   - name: "Paper"
     url: "https://www.ecb.europa.eu/pub/pdf/scpops/ecb.op335~79fbc42228.it.pdf?e0811f3c6688da05df37d40aa78a84b9"
     icon: "fa-solid:file-pdf"
+
+chart:
+  image: "/public/impact_fig.png"  # Path to a static chart image
+  caption: "Total biodiversity footprint of NFCs in euro area countries and sectors"
 ---
 
 Biodiversity – the variety of life on Earth – is essential for sustaining the healthy

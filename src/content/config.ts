@@ -19,6 +19,13 @@ const authorSchema = z.object({
     notes: z.array(z.string()).optional()
 });
 
+const conferenceSchema = z.object({
+    name: z.string(),
+    url: z.string().url().optional(),
+    presenter: z.string(),
+});
+
+
 const noteSchema = z.object({
     symbol: z.string(),
     text: z.string()
@@ -38,9 +45,14 @@ const projects = defineCollection({
         isFeatured: z.boolean().default(false),
         seo: seoSchema.optional(),
         authors: z.array(authorSchema),
-        conference: z.string().optional(),
+        conferences: z.array(conferenceSchema).optional(),
         notes: z.array(noteSchema).optional(),
-        links: z.array(linkSchema).optional()
+        links: z.array(linkSchema).optional(),
+        chart: z.object({
+            image: z.string(),
+            altText: z.string().optional(),
+            caption: z.string().optional(),
+        }).optional(),
     })
 });
 

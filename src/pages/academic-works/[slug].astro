@@ -31,14 +31,29 @@ const { Content } = await project.render();
     <Header
         title={project.data.title}
         authors={project.data.authors}
-        conference={project.data.conference}
+        conferences={project.data.conferences}
         notes={project.data.notes}
         links={project.data.links}
     />
 
     <article class="mb-16 sm:mb-24">
-        <header class="mb-8"></header>
-        <header class="mb-8"></header>
+        {
+            project.data.chart?.image && (
+                <div class="mb-12 bg-gray-50 dark:bg-gray-800 rounded-lg p-6 flex flex-col items-center justify-center">
+                    <div class="chart-container flex flex-col items-center justify-center w-full">
+                        <img
+                            src={project.data.chart.image}
+                            alt={project.data.chart.altText || `Chart for ${title}`}
+                            class={project.data.chart.imageClass || 'max-w-full object-contain max-h-[400px]'}
+                        />
+                        {project.data.chart.caption && (
+                            <p class="text-sm text-center mt-4 text-gray-600 dark:text-gray-400 max-w-2xl">{project.data.chart.caption}</p>
+                        )}
+                    </div>
+                </div>
+            )
+        }
+
         <div class="max-w-none prose prose-dante sm:prose-lg text-justify">
             <Content />
         </div>
