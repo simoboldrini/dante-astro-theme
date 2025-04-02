@@ -38,7 +38,7 @@ conferences:
 chart:
   image: "/supply_chain_fig.png"  
   altText: "Chart showing supply chain shock impacts on R&D-intensive firms"
-  caption: "Impact of supply chain shocks"
+  caption: "US IPP and GDP Response to Shortage Shock"
 ---
 
 Supply chain shocks are priced in the cross section of US equity returns and their magnitude is significant. R&D-intensive stocks are more exposed to these shocks and hence they bear a higher risk premium. We propose a novel innovation-driven endogenous growth model that reproduces these key features of the data and that predicts a severe disruptive effect of supply chain shocks on long-term growth. In a counterfactual exercise, we show that blockchains for supply management are very valuable assets as they promote innovation and growth by (i) relaxing working capital constraints and (ii) increasing production efficiency thanks to near real-time operation information flows.
