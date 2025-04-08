@@ -112,7 +112,7 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: 'Simone Boldrini',
-        text: 'I am a PhD student in Economics and Finance at <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi University</a>. I hold a BSc in Finance (2020) and a MSc in Economics (2022), both from <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi</a>. <br/><br/>After my Master, I worked for two years at the <a href="https://www.ecb.europa.eu/pub/research/authors/profiles/simone-boldrini.it.html" class="text-blue-600 underline">European Central Bank</a> on topics related to financial stability and climate change from an academic and policy perspective. <br/>',
+        text: 'I am a PhD student in Economics and Finance at <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi University</a>. I hold a BSc in Finance (2020) and a MSc in Economics (2022), both from <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi</a>. <br/><br/>Before my PhD, I worked for two years at the <a href="https://www.ecb.europa.eu/pub/research/authors/profiles/simone-boldrini.it.html" class="text-blue-600 underline">European Central Bank</a> on topics related to financial stability and climate change from an academic and policy perspective. <br/><br/> At the moment I am working on a paper showing how supply chain shocks affect asset prices—and how innovation-heavy firms are especially exposed to it. My future research? Understanding how real-world shocks ripple through a financial system where banks and non-banks are deeply entangled. <br/>',
         image: {
             src: '/simoboldrini.JPEG',
             alt: 'A person sitting at a desk in front of a computer'
