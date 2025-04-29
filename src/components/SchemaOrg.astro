@@ -1,0 +1,70 @@
+---
+import siteConfig from '../data/site-config';
+
+// Define structured data
+const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Simone Boldrini',
+    givenName: 'Simone',
+    familyName: 'Boldrini',
+    jobTitle: 'PhD Student in Economics and Finance',
+    description: 'Researcher focusing on banking, asset pricing, and climate change economics',
+    url: 'https://simoneboldrini.com', // Replace with your actual domain
+    affiliation: {
+        '@type': 'EducationalOrganization',
+        name: 'Bocconi University',
+        url: 'https://www.unibocconi.eu/'
+    },
+    alumniOf: [
+        {
+            '@type': 'EducationalOrganization',
+            name: 'Bocconi University',
+            url: 'https://www.unibocconi.eu/'
+        }
+    ],
+    worksFor: [
+        {
+            '@type': 'EducationalOrganization',
+            name: 'Bocconi University',
+            department: 'Department of Finance',
+            url: 'https://www.unibocconi.eu/'
+        }
+    ],
+    hasCredential: [
+        {
+            '@type': 'EducationalOccupationalCredential',
+            name: 'MSc in Economics',
+            educationalLevel: "Master's Degree",
+            credentialCategory: 'degree',
+            dateCreated: '2022',
+            about: {
+                '@type': 'DefinedTerm',
+                name: 'Economics',
+                inDefinedTermSet: 'https://www.wikidata.org/wiki/Q8134'
+            }
+        },
+        {
+            '@type': 'EducationalOccupationalCredential',
+            name: 'BSc in Finance',
+            educationalLevel: "Bachelor's Degree",
+            credentialCategory: 'degree',
+            dateCreated: '2020',
+            about: {
+                '@type': 'DefinedTerm',
+                name: 'Finance',
+                inDefinedTermSet: 'https://www.wikidata.org/wiki/Q8143'
+            }
+        }
+    ],
+    knowsAbout: ['Economics', 'Finance', 'Banking', 'Asset Pricing', 'Financial Stability', 'Climate Change Economics'],
+    sameAs: [
+        'https://scholar.google.com/citations?hl=en&user=z1OTiHUAAAAJ',
+        'https://www.linkedin.com/in/simone-boldrini-225a9418a/',
+        'https://www.ecb.europa.eu/pub/research/authors/profiles/simone-boldrini.it.html'
+    ],
+    image: siteConfig.image?.src || '/simoboldrini.JPEG'
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
