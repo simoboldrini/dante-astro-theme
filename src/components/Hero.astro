@@ -2,17 +2,27 @@
 import { marked } from 'marked';
 import Button from './Button.astro';
 import siteConfig from '../data/site-config';
+import { getCollection } from 'astro:content';
+import { sortItemsByDateDesc } from '../utils/data-utils';
 
 const hero = siteConfig.hero;
+
+// Fetch academic works for the papers section
+const academicWorks = await getCollection('academic-works');
+const sortedPapers = academicWorks.sort(sortItemsByDateDesc);
+
+// Fetch policy works (projects collection)
+const policyWorks = await getCollection('projects');
+const sortedPolicyWorks = policyWorks.sort(sortItemsByDateDesc);
 ---
 
 {
     (hero?.title || hero?.image?.src || hero?.text || (hero?.actions && hero.actions.length > 0)) && (
-        <section class="w-full mb-16 sm:mb-24">
+        <section class="w-full mb-16 sm:mb-24 mt-2">
             {/* Title centered at the top */}
             {hero.title && <h1 class="text-3xl leading-tight font-serif font-medium text-center mb-8 sm:text-5xl sm:leading-tight">{hero.title}</h1>}
 
-            <div class="flex flex-col md:flex-row md:gap-12 md:items-start">
+            <div class="flex flex-col md:flex-row md:gap-8 md:items-start">
                 {/* Image - Left side */}
                 {hero.image?.src && (
                     <div class="w-full md:w-2/5 order-1 mb-8 md:mb-0">
@@ -42,6 +52,88 @@ const hero = siteConfig.hero;
                     )}
                 </div>
             </div>
+
+            {/* Academic Papers Section */}
+            {academicWorks.length > 0 && (
+                <div class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-serif font-medium mb-8">Recent Academic Work</h2>
+
+                    <div class="space-y-8">
+                        {sortedPapers.map((paper) => (
+                            <div class="group">
+                                <a href={`/academic-work/${paper.slug}/`} class="block">
+                                    <h3 class="text-xl font-serif leading-snug group-hover:text-accent hover:underline">{paper.data.title}</h3>
+                                </a>
+
+                                {paper.data.authors && paper.data.authors.some((author) => author.name !== 'Simone Boldrini') && (
+                                    <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                        written with{' '}
+                                        {paper.data.authors
+                                            .filter((author) => author.name !== 'Simone Boldrini')
+                                            .map((author, index, filteredAuthors) => (
+                                                <>
+                                                    {author.url ? (
+                                                        <a href={author.url} class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                                                            {author.name}
+                                                        </a>
+                                                    ) : (
+                                                        <span>{author.name}</span>
+                                                    )}
+                                                    {index < filteredAuthors.length - 1 && ', '}
+                                                </>
+                                            ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div class="mt-8">
+                        <Button href="/academic-works">View All Papers</Button>
+                    </div>
+                </div>
+            )}
+
+            {/* Policy Work Section */}
+            {policyWorks.length > 0 && (
+                <div class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-serif font-medium mb-8">Policy Work</h2>
+
+                    <div class="space-y-8">
+                        {sortedPolicyWorks.slice(0, 3).map((policy) => (
+                            <div class="group">
+                                <a href={`/projects/${policy.slug}/`} class="block">
+                                    <h3 class="text-xl font-serif leading-snug group-hover:text-accent hover:underline">{policy.data.title}</h3>
+                                </a>
+
+                                {policy.data.authors && policy.data.authors.some((author) => author.name !== 'Simone Boldrini') && (
+                                    <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                        written with{' '}
+                                        {policy.data.authors
+                                            .filter((author) => author.name !== 'Simone Boldrini')
+                                            .map((author, index, filteredAuthors) => (
+                                                <>
+                                                    {author.url ? (
+                                                        <a href={author.url} class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                                                            {author.name}
+                                                        </a>
+                                                    ) : (
+                                                        <span>{author.name}</span>
+                                                    )}
+                                                    {index < filteredAuthors.length - 1 && ', '}
+                                                </>
+                                            ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div class="mt-8">
+                        <Button href="/projects">View All Policy Work</Button>
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
