@@ -35,6 +35,9 @@ conferences:
   - name: "XXVI Workshop on Quantitative Finance (UniPa)"
     url: "https://qfw2025.community.unipa.it"
     presenter: "C. Tebaldi"
+  - name: "2025 Society of Economics Dynamics"
+    url:  "https://economicdynamics.org/"
+    presenter: "T. Nguyen"
 chart:
   image: "/supply_chain_fig.png"  
   altText: "Chart showing supply chain shock impacts on R&D-intensive firms"
