@@ -6,9 +6,14 @@ import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
 import SchemaOrg from '../components/SchemaOrg.astro';
 
-export type Props = HeadProps & { showHeader?: boolean };
+// Update Props to include canonicalURL
+export type Props = HeadProps & {
+    showHeader?: boolean;
+    canonicalURL?: string | URL;
+};
 
-const { showHeader = true, ...head } = Astro.props;
+// Destructure and set default for canonicalURL
+const { showHeader = true, canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://simoneboldrini.com'), ...head } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,6 +21,8 @@ const { showHeader = true, ...head } = Astro.props;
     <head>
         <SchemaOrg />
         <BaseHead {...head} />
+        <!-- Add canonical link tag -->
+        <link rel="canonical" href={canonicalURL} />
         <script>
             if (localStorage.theme === 'dark') {
                 document.documentElement.classList.add('dark');
@@ -27,7 +34,8 @@ const { showHeader = true, ...head } = Astro.props;
         <div class="flex flex-col min-h-screen px-4 md:px-8">
             <Nav />
             <!-- {showHeader && <Header />} -->
-            <main class="grow w-full max-w-3xl mx-auto pt-4">
+            <!-- Change max-w-3xl to max-w-5xl for wider content -->
+            <main class="grow w-full max-w-5xl mx-auto pt-4">
                 <slot />
             </main>
             <Footer />
