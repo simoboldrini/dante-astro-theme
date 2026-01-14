@@ -17,7 +17,7 @@ authors:
     url: "https://sites.google.com/site/thientungnguyen"
     institution: "Federal Reserve Board of Governors"
   - name: "Daniil Parfenov"
-    url: "https://sites.google.com/view/daniilparfenov"
+    url: "https://faculty.unibocconi.it/daniilparfenov/"
     institution: "Bocconi University - Department of Finance"
   - name: "Claudio Tebaldi"
     url: "https://finance.unibocconi.eu/people/claudio-tebaldi"
