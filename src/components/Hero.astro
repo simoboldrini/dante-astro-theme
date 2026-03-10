@@ -6,6 +6,23 @@ import { getCollection } from 'astro:content';
 import { sortItemsByDateDesc } from '../utils/data-utils';
 
 const hero = siteConfig.hero;
+const announcements = siteConfig.announcements || [];
+
+const getAbstractText = (entry: { data: { full_abstract?: string; description?: string }; body?: string }) => {
+    if (entry.data.full_abstract && entry.data.full_abstract.trim().length > 0) {
+        return entry.data.full_abstract;
+    }
+
+    if (entry.data.full_abstract && entry.data.full_abstract.trim().length > 0) {
+        return entry.data.full_abstract;
+    }
+
+    if (!entry.body) {
+        return '';
+    }
+
+    return entry.body.replace(/\n+/g, ' ').trim();
+};
 
 // Fetch academic works for the papers section
 const academicWorks = await getCollection('academic-works');
@@ -53,6 +70,34 @@ const sortedPolicyWorks = policyWorks.sort(sortItemsByDateDesc);
                 </div>
             </div>
 
+            {announcements.length > 0 && (
+                <div class="mt-14 sm:mt-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+                    <div class="bg-muted px-6 py-10 sm:px-10 sm:py-12">
+                        <div class="mx-auto max-w-5xl">
+                            <h2 class="text-3xl sm:text-4xl font-serif font-medium">Announcements</h2>
+                            <ul class="mt-6 grid gap-5 sm:mt-8 sm:grid-cols-2">
+                                {announcements.map((announcement) => (
+                                    <li class="rounded-lg border border-gray-300/70 dark:border-gray-700/80 bg-main p-5 sm:p-6">
+                                        <p class="text-sm text-gray-800 dark:text-gray-400">{announcement.date}</p>
+                                        <p class="mt-2 leading-relaxed" set:html={announcement.text} />
+                                        {announcement.href && (
+                                            <a
+                                                href={announcement.href}
+                                                class="mt-2 inline-block text-sm text-accent hover:underline"
+                                                target={announcement.href.startsWith('http') ? '_blank' : undefined}
+                                                rel={announcement.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                            >
+                                                {announcement.linkText || 'Read more'}
+                                            </a>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* Academic Papers Section */}
             {academicWorks.length > 0 && (
                 <div class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
@@ -61,28 +106,58 @@ const sortedPolicyWorks = policyWorks.sort(sortItemsByDateDesc);
                     <div class="space-y-8">
                         {sortedPapers.map((paper) => (
                             <div class="group">
-                                <a href={`/academic-works/${paper.slug}/`} class="block">
-                                    <h3 class="text-xl font-serif leading-snug group-hover:text-accent hover:underline">{paper.data.title}</h3>
-                                </a>
+                                {getAbstractText(paper) && (
+                                    <details class="group/abstract">
+                                        <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                                            <div class="flex items-start justify-between gap-4">
+                                                <a href={`/academic-works/${paper.slug}/`} class="block">
+                                                    <h3 class="text-xl font-serif leading-snug group-hover:text-accent hover:underline">{paper.data.title}</h3>
+                                                </a>
+                                                <span
+                                                    class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-current text-main transition-transform duration-200 group-open/abstract:rotate-180"
+                                                    aria-label="Toggle abstract"
+                                                >
+                                                    <svg
+                                                        viewBox="0 0 24 24"
+                                                        class="h-4 w-4"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        aria-hidden="true"
+                                                    >
+                                                        <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            </div>
 
-                                {paper.data.authors && paper.data.authors.some((author) => author.name !== 'Simone Boldrini') && (
-                                    <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                                        written with{' '}
-                                        {paper.data.authors
-                                            .filter((author) => author.name !== 'Simone Boldrini')
-                                            .map((author, index, filteredAuthors) => (
-                                                <>
-                                                    {author.url ? (
-                                                        <a href={author.url} class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
-                                                            {author.name}
-                                                        </a>
-                                                    ) : (
-                                                        <span>{author.name}</span>
-                                                    )}
-                                                    {index < filteredAuthors.length - 1 && ', '}
-                                                </>
-                                            ))}
-                                    </div>
+                                            {paper.data.authors && paper.data.authors.some((author) => author.name !== 'Simone Boldrini') && (
+                                                <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                                    written with{' '}
+                                                    {paper.data.authors
+                                                        .filter((author) => author.name !== 'Simone Boldrini')
+                                                        .map((author, index, filteredAuthors) => (
+                                                            <>
+                                                                {author.url ? (
+                                                                    <a
+                                                                        href={author.url}
+                                                                        class="text-accent hover:underline"
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                    >
+                                                                        {author.name}
+                                                                    </a>
+                                                                ) : (
+                                                                    <span>{author.name}</span>
+                                                                )}
+                                                                {index < filteredAuthors.length - 1 && ', '}
+                                                            </>
+                                                        ))}
+                                                </div>
+                                            )}
+                                        </summary>
+
+                                        <p class="mt-2 text-sm leading-relaxed text-main">{getAbstractText(paper)}</p>
+                                    </details>
                                 )}
                             </div>
                         ))}
@@ -102,28 +177,58 @@ const sortedPolicyWorks = policyWorks.sort(sortItemsByDateDesc);
                     <div class="space-y-8">
                         {sortedPolicyWorks.slice(0, 3).map((policy) => (
                             <div class="group">
-                                <a href={`/projects/${policy.slug}/`} class="block">
-                                    <h3 class="text-xl font-serif leading-snug group-hover:text-accent hover:underline">{policy.data.title}</h3>
-                                </a>
+                                {getAbstractText(policy) && (
+                                    <details class="group/abstract">
+                                        <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                                            <div class="flex items-start justify-between gap-4">
+                                                <a href={`/projects/${policy.slug}/`} class="block">
+                                                    <h3 class="text-xl font-serif leading-snug group-hover:text-accent hover:underline">{policy.data.title}</h3>
+                                                </a>
+                                                <span
+                                                    class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-current text-main transition-transform duration-200 group-open/abstract:rotate-180"
+                                                    aria-label="Toggle abstract"
+                                                >
+                                                    <svg
+                                                        viewBox="0 0 24 24"
+                                                        class="h-4 w-4"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        aria-hidden="true"
+                                                    >
+                                                        <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            </div>
 
-                                {policy.data.authors && policy.data.authors.some((author) => author.name !== 'Simone Boldrini') && (
-                                    <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                                        written with{' '}
-                                        {policy.data.authors
-                                            .filter((author) => author.name !== 'Simone Boldrini')
-                                            .map((author, index, filteredAuthors) => (
-                                                <>
-                                                    {author.url ? (
-                                                        <a href={author.url} class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
-                                                            {author.name}
-                                                        </a>
-                                                    ) : (
-                                                        <span>{author.name}</span>
-                                                    )}
-                                                    {index < filteredAuthors.length - 1 && ', '}
-                                                </>
-                                            ))}
-                                    </div>
+                                            {policy.data.authors && policy.data.authors.some((author) => author.name !== 'Simone Boldrini') && (
+                                                <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                                    written with{' '}
+                                                    {policy.data.authors
+                                                        .filter((author) => author.name !== 'Simone Boldrini')
+                                                        .map((author, index, filteredAuthors) => (
+                                                            <>
+                                                                {author.url ? (
+                                                                    <a
+                                                                        href={author.url}
+                                                                        class="text-accent hover:underline"
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                    >
+                                                                        {author.name}
+                                                                    </a>
+                                                                ) : (
+                                                                    <span>{author.name}</span>
+                                                                )}
+                                                                {index < filteredAuthors.length - 1 && ', '}
+                                                            </>
+                                                        ))}
+                                                </div>
+                                            )}
+                                        </summary>
+
+                                        <p class="mt-2 text-sm leading-relaxed text-main">{getAbstractText(policy)}</p>
+                                    </details>
                                 )}
                             </div>
                         ))}

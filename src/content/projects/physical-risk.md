@@ -1,6 +1,7 @@
 ---
 title: 'Living in a World of Disappearing Nature: Physical Risk and the Implications for Financial Stability'
 description: The study then develops a method to capture banks’ credit portfolio sensitivity to possible future changes in the provision of ecosystem services
+full_abstract: The loss of biodiversity and the degradation of natural ecosystems pose a significant threat to the broader economy and financial stability that central banks and financial supervisors cannot ignore. To gain further insights into the implications of nature and ecosystem service degradation for financial stability, this study assesses the dependencies of euro area non-financial corporations and banks on different ecosystem services. The study then develops a method to capture banks’ credit portfolio sensitivity to possible future changes in the provision of ecosystem services. Our results show that 75% of all corporate loan exposures in the euro area have a strong dependency on at least one ecosystem service. We also find that loan portfolios may be significantly affected if nature degradation continues its current trend, with greater vulnerabilities concentrated in certain regions and economic sectors. 
 publishDate: 'Nov 14 2023'
 seo:
   image:

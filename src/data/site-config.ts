@@ -9,6 +9,13 @@ export type Link = {
     href: string;
 };
 
+export type Announcement = {
+    date: string;
+    text: string;
+    href?: string;
+    linkText?: string;
+};
+
 export type Hero = {
     title?: string;
     text?: string;
@@ -32,6 +39,7 @@ export type SiteConfig = {
     footerNavLinks?: Link[];
     socialLinks?: Link[];
     hero?: Hero;
+    announcements?: Announcement[];
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
@@ -124,6 +132,13 @@ const siteConfig: SiteConfig = {
             }
         ]
     },
+    announcements: [
+        {
+            date: '9-10 April 2026',
+            text: 'I will present my paper "Supply Chain Shocks and Asset Prices" at the <a href="https://asapworkshops.com/" class="text-gray-600 underline">2026 Adam Smith Workshop</a> in London. If you are attending, let me know! I would be happy to meet you.',
+
+        }
+    ],
     // subscribe: {
     //     title: 'Subscribe to Dante Newsletter',
     //     text: 'One update per week. All the latest posts directly in your inbox.',
