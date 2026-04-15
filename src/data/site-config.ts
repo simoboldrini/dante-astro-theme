@@ -98,7 +98,7 @@ const siteConfig: SiteConfig = {
             href: '/contact'
         },
         {
-            text: 'Terms',
+            text: 'Privacy & Terms',
             href: '/terms'
         }
 
