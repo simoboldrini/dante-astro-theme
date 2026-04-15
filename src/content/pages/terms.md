@@ -2,51 +2,41 @@
 title: Terms of Service
 seo:
   title: Terms of Service
-  description: Explore the terms and conditions of Dante website for a clear understanding of guidelines and responsibilities.
+  description: Terms governing the use of this website.
 ---
 
-**Last updated on January 11, 2024**
+**Last updated: April 2026**
 
-These Terms of Service ("Terms") govern your access to and use of [Website Name] ("the Website") and any related services provided by [Website Owner/Company] ("we," "us," or "our"). Please read these Terms carefully before using the Website.
+These Terms of Service ("Terms") govern your access to and use of this website ("the Website"). By accessing the Website, you agree to these Terms.
 
-**1. Acceptance of Terms**
+## 1. Use of the Website
 
-By accessing or using the Website, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms or the Privacy Policy, please do not use the Website.
+This Website is provided for informational purposes only. You agree to use it in a lawful manner and not to engage in any activity that may harm the Website or interfere with its availability.
 
-**2. Changes to Terms**
+## 2. Intellectual Property
 
-We reserve the right to modify, amend, or update these Terms at any time. Such changes will be effective upon posting on the Website. It is your responsibility to review these Terms regularly. Your continued use of the Website after any changes indicates your acceptance of the revised Terms.
+Unless otherwise stated, all content on this Website (including text, images, and layout) is the property of the Website owner and is protected by applicable copyright laws. Content may not be reproduced or distributed without prior permission.
 
-**3. Use of the Website**
+## 3. Third-Party Links
 
-You agree to use the Website for lawful purposes and in a manner consistent with these Terms. You are responsible for any content you post or submit on the Website.
+This Website may contain links to external websites. These are provided for convenience only. The Website owner is not responsible for the content or practices of third-party sites.
 
-**4. Registration and Account**
+## 4. Cookies and Data Collection
 
-Certain areas of the Website may require registration or the creation of an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+This Website does not use cookies for tracking or analytics purposes and does not collect personal data.
 
-**5. Content and Intellectual Property**
+A security-related cookie (“cf_clearance”) may be set by Cloudflare to protect the Website from malicious traffic. This cookie is strictly necessary for the functioning and security of the Website and does not store personal information.
 
-The content on the Website, including text, graphics, logos, images, audio, video, software, and other materials, is owned or licensed by us and is protected by copyright and other intellectual property laws. You may not use, reproduce, or distribute the content without our prior written consent.
+## 5. Disclaimer
 
-**6. Third-Party Links**
+The Website is provided on an “as is” basis. No warranties are made regarding the accuracy, completeness, or availability of the content.
 
-The Website may contain links to third-party websites or resources. We do not endorse and are not responsible for the content, products, or services provided by third parties. Your use of such websites is at your own risk.
+## 6. Limitation of Liability
 
-**7. Termination**
+To the fullest extent permitted by law, the Website owner shall not be liable for any damages arising from the use of, or inability to use, the Website.
 
-We may, at our sole discretion, terminate or suspend your access to the Website at any time and for any reason, without notice.
+## 7. Changes to These Terms
 
-**8. Disclaimer**
-
-The Website and its content are provided on an "as is" and "as available" basis. We make no warranties or representations about the accuracy or completeness of the content. We do not guarantee that the Website will be error-free or uninterrupted.
-
-**9. Limitation of Liability**
-
-To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, arising out of or in connection with the use or inability to use the Website.
-
-**10. Governing Law**
-
-These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of laws principles. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of [Your Jurisdiction].
+These Terms may be updated from time to time. Continued use of the Website implies acceptance of any updates.
 
 _Thank you for reading our Terms of Service. By using the Website, you agree to be bound by these Terms._
