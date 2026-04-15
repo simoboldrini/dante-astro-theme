@@ -39,6 +39,9 @@ conferences:
   - name: "2025 Society of Economics Dynamics"
     url:  "https://economicdynamics.org/"
     presenter: "T. Nguyen"
+  - name: "Adam Smith Workshop 2026"
+    url:  "https://asapworkshops.com/"
+    presenter: "S. Boldrini"  
 chart:
   image: "/supply_chain_fig.png"  
   altText: "Chart showing supply chain shock impacts on R&D-intensive firms"
