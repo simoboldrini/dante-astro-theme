@@ -18,6 +18,6 @@ _Email:_<br/>
 Feel free to drop me an email at [simone.boldrini[at]phd.unibocconi.it](mailto:simone.boldrini@phd.unibocconi.it), and I'll do my best to respond as soon as possible.
 
 _Social Media:_<br/>
-You can also find me on [LinkedIn](https://www.linkedin.com/in/simone-boldrini-225a9418a/).
+You can also find me on [LinkedIn](https://www.linkedin.com/in/simone-boldrini/).
 
 
