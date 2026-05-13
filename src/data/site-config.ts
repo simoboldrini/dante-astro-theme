@@ -111,7 +111,7 @@ const siteConfig: SiteConfig = {
 
         {
             text: 'LinkedIn',
-            href: 'https://www.linkedin.com/in/simone-boldrini-225a9418a/'
+            href: 'https://www.linkedin.com/in/simone-boldrini/'
         },
         {
             text: 'Mail',
