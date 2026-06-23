@@ -7,6 +7,7 @@ import { sortItemsByDateDesc } from '../utils/data-utils';
 
 const hero = siteConfig.hero;
 const announcements = siteConfig.announcements || [];
+const commentaries = siteConfig.commentaries || [];
 
 const getAbstractText = (entry: { data: { full_abstract?: string; description?: string }; body?: string }) => {
     if (entry.data.full_abstract && entry.data.full_abstract.trim().length > 0) {
@@ -81,12 +82,7 @@ const sortedPolicyWorks = policyWorks.sort(sortItemsByDateDesc);
                                         <p class="text-sm text-gray-800 dark:text-gray-400">{announcement.date}</p>
                                         <p class="mt-2 leading-relaxed" set:html={announcement.text} />
                                         {announcement.href && (
-                                            <a
-                                                href={announcement.href}
-                                                class="mt-2 inline-block text-sm text-accent hover:underline"
-                                                target={announcement.href.startsWith('http') ? '_blank' : undefined}
-                                                rel={announcement.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                            >
+                                            <a href={announcement.href} class="mt-2 inline-block text-sm text-accent hover:underline">
                                                 {announcement.linkText || 'Read more'}
                                             </a>
                                         )}
@@ -236,6 +232,48 @@ const sortedPolicyWorks = policyWorks.sort(sortItemsByDateDesc);
 
                     <div class="mt-8">
                         <Button href="/projects">View All</Button>
+                    </div>
+                </div>
+            )}
+
+            {commentaries.length > 0 && (
+                <div id="commentaries" class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-serif font-medium mb-8">Commentaries</h2>
+
+                    <div class="space-y-8">
+                        {commentaries.map((commentary) => {
+                            return (
+                                <div class="group">
+                                    <div class="flex items-start justify-between gap-4">
+                                        {commentary.href ? (
+                                            <a href={commentary.href} class="block">
+                                                <h3 class="text-xl font-serif leading-snug group-hover:text-accent hover:underline">{commentary.title}</h3>
+                                            </a>
+                                        ) : (
+                                            <h3 class="text-xl font-serif leading-snug">{commentary.title}</h3>
+                                        )}
+                                    </div>
+
+                                    {commentary.authors && commentary.authors.length > 0 && (
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            written with{' '}
+                                            {commentary.authors.map((author, index) => (
+                                                <span>
+                                                    {author.href ? (
+                                                        <a href={author.href} class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                                                            {author.name}
+                                                        </a>
+                                                    ) : (
+                                                        <span>{author.name}</span>
+                                                    )}
+                                                    {index < commentary.authors.length - 1 && ', '}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             )}
