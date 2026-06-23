@@ -16,6 +16,17 @@ export type Announcement = {
     linkText?: string;
 };
 
+export type Commentary = {
+    date?: string;
+    title: string;
+    href?: string;
+    description?: string;
+    authors?: {
+        name: string;
+        href?: string;
+    }[];
+};
+
 export type Hero = {
     title?: string;
     text?: string;
@@ -40,6 +51,7 @@ export type SiteConfig = {
     socialLinks?: Link[];
     hero?: Hero;
     announcements?: Announcement[];
+    commentaries?: Commentary[];
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
@@ -72,6 +84,11 @@ const siteConfig: SiteConfig = {
         {
             text: 'Policy work',
             href: '/projects'
+        },
+
+        {
+            text: 'Commentaries',
+            href: '/#commentaries'
         },
         // {
         //     text: 'Blog',
@@ -137,6 +154,18 @@ const siteConfig: SiteConfig = {
             date: '9-10 April 2026',
             text: 'I will present my paper "Supply Chain Uncertainty: Pricing, Growth & Blockchains" at the <a href="https://asapworkshops.com/" class="text-gray-600 underline">2026 Adam Smith Workshop</a> in London. If you are attending, let me know! I would be happy to meet you.',
 
+        }
+    ],
+    commentaries: [
+        {
+            title: 'Crisis Preparedness in the Era of Digital Banking',
+            href: 'https://iep.unibocconi.eu/crisis-preparedness-era-digital-banking',
+            authors: [
+                {
+                    name: 'Elena Carletti',
+                    href: 'https://sites.google.com/view/elena-carletti/home'
+                }
+            ]
         }
     ],
     // subscribe: {
