@@ -151,10 +151,16 @@ const siteConfig: SiteConfig = {
     },
     announcements: [
         {
+            date: 'July 2026',
+            text: 'I’m happy to share that I have recently started  PhD Internship at the Bank of England, where I’ll be working on a research project related to non-bank financial intermediation.',
+
+        },
+        {
             date: '9-10 April 2026',
             text: 'I will present my paper "Supply Chain Uncertainty: Pricing, Growth & Blockchains" at the <a href="https://asapworkshops.com/" class="text-gray-600 underline">2026 Adam Smith Workshop</a> in London. If you are attending, let me know! I would be happy to meet you.',
 
         }
+
     ],
     commentaries: [
         {
