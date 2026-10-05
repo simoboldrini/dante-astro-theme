@@ -52,6 +52,7 @@ export type SiteConfig = {
     hero?: Hero;
     announcements?: Announcement[];
     commentaries?: Commentary[];
+    workInProgress?: Commentary[];
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
@@ -137,7 +138,7 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: 'Simone Boldrini',
-        text: 'I am a second-year PhD student in Economics and Finance at <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi University</a>. I hold a BSc in Finance (2020) and a MSc in Economics (2022), both from <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi</a>. <br/><br/>Before my PhD, I worked for two years at the <a href="https://www.ecb.europa.eu/pub/research/authors/profiles/simone-boldrini.it.html" class="text-blue-600 underline">European Central Bank</a> on topics related to financial stability and climate change from an academic and policy perspective. <br/><br/> At the moment I am working on a paper showing how supply chain shocks affect asset prices—and how innovation-heavy firms are especially exposed to it. My future research? Understanding how real-world shocks ripple through a financial system where banks and non-banks are deeply entangled. <br/>',
+        text: 'I am a third-year PhD student in Economics and Finance at <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi University</a>. I hold a BSc in Finance (2020) and a MSc in Economics (2022), both from <a href="https://www.unibocconi.eu/" class="text-blue-600 underline">Bocconi</a>. <br/><br/>Before my PhD, I worked for two years at the <a href="https://www.ecb.europa.eu/pub/research/authors/profiles/simone-boldrini.it.html" class="text-blue-600 underline">European Central Bank</a> on topics related to financial stability and climate change from an academic and policy perspective. <br/><br/> At the moment I am working on a paper showing how supply chain shocks affect asset prices—and how innovation-heavy firms are especially exposed to it. My future research? Understanding how real-world shocks ripple through a financial system where banks and non-banks are deeply entangled. <br/>',
         image: {
             src: '/simoboldrini.JPEG',
             alt: 'A person sitting at a desk in front of a computer'
@@ -174,13 +175,22 @@ const siteConfig: SiteConfig = {
             ]
         }
     ],
-    // subscribe: {
-    //     title: 'Subscribe to Dante Newsletter',
-    //     text: 'One update per week. All the latest posts directly in your inbox.',
-    //     formUrl: '#'
-    // },
-    postsPerPage: 8,
-    projectsPerPage: 8
+    workInProgress: [
+        {
+            title: 'The role of NBFI holdings in the transmission of shocks to UK non-financial corporations',
+            authors: [
+                {
+                    name: 'Isabelle Roland',
+                    href: 'https://www.isabelleroland.com/'
+                },
+                {
+                    name: 'Eduardo Maqui',
+                    href: 'https://www.bankofengland.co.uk/research/researchers/eduardo-maqui'
+                }
+            ]
+        }
+    ],
+
 };
 
 export default siteConfig;

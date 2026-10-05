@@ -8,6 +8,7 @@ import { sortItemsByDateDesc } from '../utils/data-utils';
 const hero = siteConfig.hero;
 const announcements = siteConfig.announcements || [];
 const commentaries = siteConfig.commentaries || [];
+const workInProgress = siteConfig.workInProgress || [];
 
 const getAbstractText = (entry: { data: { full_abstract?: string; description?: string }; body?: string }) => {
     if (entry.data.full_abstract && entry.data.full_abstract.trim().length > 0) {
@@ -235,6 +236,47 @@ const sortedPolicyWorks = policyWorks.sort(sortItemsByDateDesc);
                     </div>
                 </div>
             )}
+            {workInProgress.length > 0 && (
+                <div id="work-in-progress" class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-serif font-medium mb-8">Work in Progress</h2>
+
+                    <div class="space-y-8">
+                        {workInProgress.map((work) => {
+                            return (
+                                <div class="group">
+                                    <div class="flex items-start justify-between gap-4">
+                                        {work.href ? (
+                                            <a href={work.href} class="block">
+                                                <h3 class="text-xl font-serif leading-snug group-hover:text-accent hover:underline">{work.title}</h3>
+                                            </a>
+                                        ) : (
+                                            <h3 class="text-xl font-serif leading-snug">{work.title}</h3>
+                                        )}
+                                    </div>
+
+                                    {work.authors && work.authors.length > 0 && (
+                                        <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                            written with{' '}
+                                            {work.authors.map((author, index) => (
+                                                <span>
+                                                    {author.href ? (
+                                                        <a href={author.href} class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                                                            {author.name}
+                                                        </a>
+                                                    ) : (
+                                                        <span>{author.name}</span>
+                                                    )}
+                                                    {index < work.authors.length - 1 && ', '}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            )}
 
             {commentaries.length > 0 && (
                 <div id="commentaries" class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
@@ -277,6 +319,7 @@ const sortedPolicyWorks = policyWorks.sort(sortItemsByDateDesc);
                     </div>
                 </div>
             )}
+
         </section>
     )
 }
