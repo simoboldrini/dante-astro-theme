@@ -177,7 +177,7 @@ const siteConfig: SiteConfig = {
     ],
     workInProgress: [
         {
-            title: 'The role of NBFI holdings in the transmission of shocks to UK non-financial corporations',
+            title: 'The Role of NBFI\'s Holdings in the Transmission of Shocks to UK Non-Financial Corporations',
             authors: [
                 {
                     name: 'Isabelle Roland',
@@ -186,6 +186,24 @@ const siteConfig: SiteConfig = {
                 {
                     name: 'Eduardo Maqui',
                     href: 'https://www.bankofengland.co.uk/research/researchers/eduardo-maqui'
+                }
+            ]
+        },
+
+        {
+            title: 'Crypto Frictions \& Fiat Currencies',
+            authors: [
+                {
+                    name: 'María José Arteaga Garavito',
+                    href: 'https://majoarteaga.github.io/'
+                },
+                {
+                    name: 'Nicola Borri',
+                    href: 'https://www.nicolaborri.com/'
+                },
+                {
+                    name: ' Mariano (Max) Massimiliano Croce',
+                    href: 'https://mmcroce.com/'
                 }
             ]
         }
